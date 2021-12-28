@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible"
+        content="IE=edge">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <title>screen</title>
+  <link rel="stylesheet/less"
+        type="text/css"
+        href="assets/less/styles.less" />
+  <script src="assets/js/less.min.js"></script>
+  <script src="assets/js/echarts.js"></script>
+  <script src="assets/js/jquery-3.6.0.min.js"></script>
+
+  <script>
+    function initLeft2Chart() {
+      // 基于准备好的dom，初始化echarts实例
+      const left2Chart = echarts.init(document.getElementById('left2'));
+
+      // 指定图表的配置项和数据
+      const left2Option = {
+        tooltip: {
+          trigger: 'axis',
+          axisPointer: {
+            type: 'shadow'
+          }
+        },
+        legend: {
+          top: '7%',
+          data: ['进入', '出去'],
+          textStyle: {
+            color: 'rgba(190, 199, 232, 1)'
+          }
+        },
+        grid: {
+          left: '3%',
+          right: '4%',
+          bottom: '3%',
+          containLabel: true
+        },
+        xAxis: {
+          type: 'value',
+          boundaryGap: [0, 0.01],
+          splitLine: {
+            show: true,
+            lineStyle: {
+              color: 'rgba(183, 200, 235, 0.29)',
+              type: 'dashed'
+            }
+
+          }
+        },
+        yAxis: {
+          type: 'category',
+          data: [{
+            value: '飞机',
+            textStyle: {
+              color: '#899DBF'
+            }
+          },
+          {
+            value: '高铁',
+            textStyle: {
+              color: '#899DBF'
+            },
+          },
+          {
+            value: '大巴',
+            textStyle: {
+              color: '#899DBF'
+            },
+          },
+          {
+            value: '九州港',
+            textStyle: {
+              color: '#899DBF'
+            },
+          }]
+        },
+        series: [
+          {
+            name: '进入',
+            type: 'bar',
+            data: [{
+              value: 1820,
+              itemStyle: {
+                color: new echarts.graphic.LinearGradient(0, 0.5, 1, 0.5, [
+                  { offset: 0, color: 'rgba(26, 66, 156, 0.5)' },
+                  { offset: 1, color: 'rgba(79, 107, 255, 0.5)' }
+                ])
+              }
+            },
+            {
+              value: 2348,
+              itemStyle: {
+                color: new echarts.graphic.LinearGradient(0, 0.5, 1, 0.5, [
+                  { offset: 0, color: 'rgba(26, 66, 156, 0.5)' },
+                  { offset: 1, color: 'rgba(79, 107, 255, 0.5)' }
+                ])
+              }
+            },
+            {
+              value: 2903,
+              itemStyle: {
+                color: new echarts.graphic.LinearGradient(0, 0.5, 1, 0.5, [
+                  { offset: 0, color: 'rgba(26, 66, 156, 0.5)' },
+                  { offset: 1, color: 'rgba(79, 107, 255, 0.5)' }
+                ])
+              }
+            },
+            {
+              value: 1049,
+              itemStyle: {
+                color: new echarts.graphic.LinearGradient(0, 0.5, 1, 0.5, [
+                  { offset: 0, color: 'rgba(26, 66, 156, 0.5)' },
+                  { offset: 1, color: 'rgba(79, 107, 255, 0.5)' }
+                ])
+              }
+            }]
+          },
+          {
+            name: '出去',
+            type: 'bar',
+            data: [
+              {
+                value: 1932,
+                itemStyle: {
+                  color: new echarts.graphic.LinearGradient(0, 0.5, 1, 0.5, [
+                    { offset: 0, color: 'rgba(0, 156, 255, 0.5)' },
+                    { offset: 1, color: 'rgba(0, 255, 228, 0.5)' }
+                  ])
+                }
+              },
+              {
+                value: 2343,
+                itemStyle: {
+                  color: new echarts.graphic.LinearGradient(0, 0.5, 1, 0.5, [
+                    { offset: 0, color: 'rgba(0, 156, 255, 0.5)' },
+                    { offset: 1, color: 'rgba(0, 255, 228, 0.5)' }
+                  ])
+                }
+              },
+              {
+                value: 3100,
+                itemStyle: {
+                  color: new echarts.graphic.LinearGradient(0, 0.5, 1, 0.5, [
+                    { offset: 0, color: 'rgba(0, 156, 255, 0.5)' },
+                    { offset: 1, color: 'rgba(0, 255, 228, 0.5)' }
+                  ])
+                }
+              },
+              {
+                value: 1215,
+                itemStyle: {
+                  color: new echarts.graphic.LinearGradient(0, 0.5, 1, 0.5, [
+                    { offset: 0, color: 'rgba(0, 156, 255, 0.5)' },
+                    { offset: 1, color: 'rgba(0, 255, 228, 0.5)' }
+                  ])
+                }
+              },]
+          }
+        ]
+      };
+
+      // 使用刚指定的配置项和数据显示图表。
+      left2Chart.setOption(left2Option);
+    }
+
+    function initLeft3Chart() {
+      // 基于准备好的dom，初始化echarts实例
+      const left3Chart = echarts.init(document.getElementById('left3'));
+
+      // 指定图表的配置项和数据
+      const left3Option = {
+        tooltip: {
+          trigger: 'axis',
+          axisPointer: {
+            type: 'cross',
+            label: {
+              backgroundColor: '#6a7985'
+            }
+          }
+        },
+        legend: {
+          top: '7%',
+          data: ['进入', '出去'],
+          textStyle: {
+            color: 'rgba(190, 199, 232, 1)'
+          }
+        },
+        grid: {
+          left: '3%',
+          right: '4%',
+          bottom: '3%',
+          containLabel: true
+        },
+        xAxis: [
+          {
+            type: 'category',
+            boundaryGap: false,
+            data: [
+              {
+                value: '拱口北岸',
+                textStyle: {
+                  color: '#899DBF'
+                }
+              },
+              {
+                value: '港珠澳大桥',
+                textStyle: {
+                  color: '#899DBF'
+                },
+              },
+              {
+                value: '横琴口岸',
+                textStyle: {
+                  color: '#899DBF'
+                },
+              },
+              {
+                value: '湾仔口岸',
+                textStyle: {
+                  color: '#899DBF'
+                },
+              }]
+          }
+        ],
+        yAxis: [
+          {
+            type: 'value',
+            splitLine: {
+              show: true,
+              lineStyle: {
+                color: 'rgba(183, 200, 235, 0.29)',
+                type: 'dashed'
+              }
+
+            }
+          }
+        ],
+        series: [
+          {
+            name: '进入',
+            type: 'line',
+            stack: 'Total',
+            smooth: true,
+            lineStyle: {
+              width: 1
+            },
+            showSymbol: false,
+            areaStyle: {
+              opacity: 0.8,
+              color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                {
+                  offset: 0,
+                  color: 'rgba(79, 107, 255, 0.5)'
+                },
+                {
+                  offset: 1,
+                  color: 'rgba(26, 66, 156, 0)'
+                }
+              ])
+            },
+            emphasis: {
+              focus: 'series'
+            },
+            data: [140, 232, 101, 264]
+          },
+          {
+            name: '出去',
+            type: 'line',
+            stack: 'Total',
+            smooth: true,
+            lineStyle: {
+              width: 1
+            },
+            showSymbol: false,
+            areaStyle: {
+              opacity: 0.8,
+              color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                {
+                  offset: 0,
+                  color: 'rgba(0, 156, 255, 0.5)'
+                },
+                {
+                  offset: 1,
+                  color: 'rgba(0, 255, 228, 0)'
+                }
+              ])
+            },
+            emphasis: {
+              focus: 'series'
+            },
+            data: [120, 282, 111, 234]
+          }
+        ]
+      };
+
+      // 使用刚指定的配置项和数据显示图表。
+      left3Chart.setOption(left3Option);
+    }
+
+    function onFooterChange(index) {
+      const items = $(".footer").children(".item")
+      for (let index = 0; index < items.length; index++) {
+        const element = items[index];
+        element.className = 'item'
+      }
+      items[index - 1].className = 'item active'
+    }
+
+    function setFontSize() {
+      let designWidth = 1920;//设计稿的宽度，根据实际项目调整
+      let designHeight = 1080;//设计稿的高度，根据实际项目调整
+      var fontSize =
+        document.documentElement.clientWidth / document.documentElement.clientHeight < designWidth / designHeight ?
+          (document.documentElement.clientWidth / designWidth) * 12 :
+          (document.documentElement.clientHeight / designHeight) * 12;
+
+      document.querySelector('html').style.fontSize = fontSize + 'px';
+    }
+
+    function scrollFun() {
+      const elements = $('.imgs_box').children('div')
+      setInterval(() => {
+        for (let index = 0; index < elements.length; index++) {
+          const element = elements[index]
+          const key = element.className.slice(17, 18)
+          if (Number(key) === 6) {
+            element.className = 'imgs_box_item img1'
+          } else {
+            element.className = 'imgs_box_item img' + (Number(key) + 1)
+          }
+        }
+      }, 15000)
+    }
+
+    window.onload = () => {
+      const elements = $('.imgs_box').children('div')
+      for (let index = 0; index < elements.length; index++) {
+        const element = elements[index]
+        const key = element.className.slice(17, 18)
+        if (Number(key) === 6) {
+          element.className = 'imgs_box_item img1'
+        } else {
+          element.className = 'imgs_box_item img' + (Number(key) + 1)
+        }
+      }
+
+      scrollFun()
+
+      setFontSize()
+      initLeft2Chart()
+      initLeft3Chart()
+    }
+
+    window.onresize = () => {
+      location.reload()
+    }
+  </script>
+</head>
+
+<body>
+  <div class="page_root">
+    <section class="part left">
+      <div class="box">
+        <div class="title">
+          <span>环珠海治安防空圈概览</span>
+          <img style="margin-top: -1.5rem;"
+               src="./assets/images/珠海社会安防切图/标题2.png"
+               alt=""
+               srcset="">
+        </div>
+        <div class="content">
+          <div class="item">
+            <img src="./assets/images/珠海社会安防切图/标注地址.png"
+                 alt="">
+            <div class="info">
+              <span class="name">标注地址</span>
+              <span class="value"
+                    style="color: rgba(71, 159, 254, 1);">134.2万</span>
+            </div>
+          </div>
+          <div class="item">
+            <img src="./assets/images/珠海社会安防切图/实有人口.png"
+                 alt="">
+            <div class="info">
+              <span class="name">实有人口</span>
+              <span class="value"
+                    style="color: rgba(133, 177, 255, 1)">202.37万</span>
+            </div>
+          </div>
+          <div class="item">
+            <img src="./assets/images/珠海社会安防切图/实有房屋.png"
+                 alt="">
+            <div class="info">
+              <span class="name">实有房屋</span>
+              <span class="value"
+                    style="color: rgba(249, 199, 104, 1)">402.37万</span>
+            </div>
+          </div>
+          <div class="item">
+            <img src="./assets/images/珠海社会安防切图/实有单位.png"
+                 alt="">
+            <div class="info">
+              <span class="name">实有单位</span>
+              <span class="value"
+                    style="color: rgba(144, 255, 173, 1)">156.66万</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="title"
+             style="background: none;">
+          <span style="margin: 0.8rem 0 0 6%;">今日入珠/出珠人口数量</span>
+          <img src="./assets/images/珠海社会安防切图/标题2.png"
+               alt=""
+               srcset="">
+        </div>
+        <div id="left2"
+             class="content"></div>
+      </div>
+      <div class="box">
+        <div class="title"
+             style="background: none;">
+          <span style="margin: 0.8rem 0 0 6%;">今日口岸入境人员数量</span>
+          <img src="./assets/images/珠海社会安防切图/标题2.png"
+               alt=""
+               srcset="">
+        </div>
+        <div id="left3"
+             class="content"></div>
+      </div>
+      <div class="box">
+        <div class="title"
+             style="background: none;">
+          <span style="margin: 0.8rem 0 0 6%;">今日进出车辆</span>
+          <img src="./assets/images/珠海社会安防切图/标题2.png"
+               alt=""
+               srcset="">
+        </div>
+        <div class="content car_content">
+          <div class="img_box">
+            <img src="./assets/images/珠海社会安防切图/车辆.png"
+                 alt="">
+            <img src="./assets/images/珠海社会安防切图/车辆光点.png"
+                 alt="">
+          </div>
+          <div class="info_box">
+            <div class="info_box_item">
+              <span class="name">入珠海</span>
+              <span class="value"
+                    style="color: rgba(71, 159, 254, 1)">56.45万辆</span>
+            </div>
+            <div class="info_box_item">
+              <span class="name">出珠海</span>
+              <span class="value"
+                    style="color: rgba(249, 199, 104, 1)">56.45万辆</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="center">
+      <div class="container">
+        <img class="top" src="./assets/images/顶部.png" alt="">
+        <div class="title">珠海社会治安防控应用平台</div>
+      </div>
+      <img class="bottom" src="./assets/images/底座.png" alt="">
+      <img class="figure" src="./assets/images/剪影.png" alt="">
+      <div class="imgs_box">
+        <div class="imgs_box_item img1">
+          <img src="./assets/images/枪支bj.png" alt="">
+          <img src="./assets/images/枪支.png" alt="">
+        </div>
+        <div class="imgs_box_item img2">
+          <img src="./assets/images/监控bj.png" alt="">
+          <img src="./assets/images/监控.png" alt="">
+        </div>
+        <div class="imgs_box_item img3">
+          <img src="./assets/images/剧毒物bj.png" alt="">
+          <img src="./assets/images/剧毒物.png" alt="">
+        </div>
+        <div class="imgs_box_item img4">
+          <img src="./assets/images/枪支bj.png" alt="">
+          <img src="./assets/images/刀具.png" alt="">
+        </div>
+        <div class="imgs_box_item img5">
+          <img src="./assets/images/监控bj.png" alt="">
+          <img src="./assets/images/爆炸物.png" alt="">
+        </div>
+        <div class="imgs_box_item img6">
+          <img src="./assets/images/监控bj.png" alt="">
+          <img src="./assets/images/车辆.png" alt="">
+        </div>
+      </div>
+      <div class="footer">
+        <div class="item active"
+             onclick="onFooterChange(1)">
+          <img class="bac"
+               src=""
+               alt="">
+          <img class="tip_img"
+               src="./assets/images/珠海社会安防切图/psjk.png"
+               alt="">
+          <span>平时监控</span>
+        </div>
+        <div class="item"
+             onclick="onFooterChange(2)">
+          <img class="bac"
+               src=""
+               alt="">
+          <img class="tip_img"
+               src="./assets/images/珠海社会安防切图/zasj.png"
+               alt="">
+          <span>治安事件</span>
+        </div>
+        <div class="item"
+             onclick="onFooterChange(3)">
+          <img class="bac"
+               src=""
+               alt="">
+          <img class="tip_img"
+               src="./assets/images/珠海社会安防切图/zszh.png"
+               alt="">
+          <span>战时智慧</span>
+        </div>
+        <div class="item"
+             onclick="onFooterChange(4)">
+          <img class="bac"
+               src=""
+               alt="">
+          <img class="tip_img"
+               src="./assets/images/珠海社会安防切图/afyj.png"
+               alt="">
+          <span>安防预警</span>
+        </div>
+      </div>
+    </section>
+    <section class="part right">
+      <div class="box">
+        <div class="title">
+          <span>危险物品管控</span>
+          <img src="./assets/images/珠海社会安防切图/标题2.png"
+               alt=""
+               srcset="">
+        </div>
+
+        <div class="content">
+          <div class="info">
+            <div class="item">
+              <div class="img_box">
+                <img src="./assets/images/珠海社会安防切图/危险品-1.png"
+                     alt="">
+                <img class="img_gun"
+                     src="./assets/images/珠海社会安防切图/枪.png"
+                     alt="">
+              </div>
+              <div class="info_box">
+                <span class="name">枪支弹药单位</span>
+                <span class="value">2.236</span>
+                <span class="name mt16">从业人员</span>
+                <span class="value"
+                      style="color: rgba(249, 199, 104, 1)">2794</span>
+              </div>
+            </div>
+            <div class="item">
+              <div class="img_box">
+                <img src="./assets/images/珠海社会安防切图/危险品-1.png"
+                     alt="">
+                <img class="img_danger"
+                     src="./assets/images/珠海社会安防切图/危险物品.png"
+                     alt="">
+              </div>
+              <div class="info_box">
+                <span class="name">危险物品单位</span>
+                <span class="value"
+                      style="color: rgba(133, 177, 255, 1)">2.236</span>
+                <span class="name mt16">从业人员</span>
+                <span class="value"
+                      style="color: rgba(144, 255, 173, 1)">2794</span>
+              </div>
+            </div>
+          </div>
+          <div class="list">
+            <div class="item">
+              <span class="name">近一个月爆破物品申请购买总数</span>
+              <span class="value">2.236</span>
+            </div>
+            <div class="item">
+              <span class="name">近一个月爆破物品申请购买总数</span>
+              <span class="value">2.236</span>
+            </div>
+            <div class="item">
+              <span class="name">近一个月爆破物品申请购买总数</span>
+              <span class="value">2.236</span>
+            </div>
+            <div class="item">
+              <span class="name">近一个月爆破物品申请购买总数</span>
+              <span class="value">2.236</span>
+            </div>
+            <div class="item">
+              <span class="name">近一个月爆破物品申请购买总数</span>
+              <span class="value">2.236</span>
+            </div>
+            <div class="item">
+              <span class="name">近一个月爆破物品申请购买总数</span>
+              <span class="value">2.236</span>
+            </div>
+            <div class="item">
+              <span class="name">近一个月爆破物品申请购买总数</span>
+              <span class="value">2.236</span>
+            </div>
+            <div class="item">
+              <span class="name">近一个月爆破物品申请购买总数</span>
+              <span class="value">2.236</span>
+            </div>
+            <div class="item">
+              <span class="name">近一个月爆破物品申请购买总数</span>
+              <span class="value">2.236</span>
+            </div>
+            <div class="item">
+              <span class="name">近一个月爆破物品申请购买总数</span>
+              <span class="value">2.236</span>
+            </div>
+            <div class="item">
+              <span class="name">近一个月爆破物品申请购买总数</span>
+              <span class="value">2.236</span>
+            </div>
+            <div class="item">
+              <span class="name">近一个月爆破物品申请购买总数</span>
+              <span class="value">2.236</span>
+            </div>
+            <div class="item">
+              <span class="name">近一个月爆破物品申请购买总数</span>
+              <span class="value">2.236</span>
+            </div>
+            <div class="item">
+              <span class="name">近一个月爆破物品申请购买总数</span>
+              <span class="value">2.236</span>
+            </div>
+            <div class="item">
+              <span class="name">近一个月爆破物品申请购买总数</span>
+              <span class="value">2.236</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="box"
+           style="flex: 0.5 0">
+        <div class="title">
+          <span>治安重点人员</span>
+          <img src="./assets/images/珠海社会安防切图/标题2.png"
+               alt=""
+               srcset="">
+        </div>
+        <div class="content">
+          <div class="info_title">治安重点人员：3.106</div>
+          <div class="info_bar">
+            <div class="item"
+                 style="color: rgba(250, 44, 83, 1)">
+              <div class="img_box img_box1">
+                逃
+              </div>
+              256
+            </div>
+            <div class="item">
+              <div class="img_box">
+                稳
+              </div>
+              256
+            </div>
+            <div class="item">
+              <div class="img_box">
+                前
+              </div>
+              256
+            </div>
+            <div class="item"
+                 style="color:rgba(249, 199, 104, 1)">
+              <div class="img_box img_box3">
+                恐
+              </div>
+              256
+            </div>
+            <div class="item"
+                 style="color: rgba(144, 255, 173, 1)">
+              <div class="img_box img_box4">
+                毒
+              </div>
+              256
+            </div>
+            <div class="item">
+              <div class="img_box">
+                病
+              </div>
+              256
+            </div>
+            <div class="item">
+              <div class="img_box">
+                访
+              </div>
+              256
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="title"
+             style="background: none;">
+          <span style="margin: 0.8rem 0 0 6%;">重点人员预警</span>
+          <img src="./assets/images/珠海社会安防切图/标题2.png"
+               alt=""
+               srcset="">
+        </div>
+
+        <div class="content"
+             style="padding-bottom: 20%">
+          <div class="list_box">
+            <div class="item">
+              <div class="img_box">
+                <img src="./assets/images/珠海社会安防切图/目标人物.png"
+                     alt="">
+              </div>
+              <div class="info_content">
+                <div class="name">
+                  张玉
+                  <span>涉毒人员库</span>
+                  <span>全国盗抢库</span>
+                </div>
+                <div class="time_box">
+                  <div class="time">
+                    时间：2021-12-18 18:00:00
+                  </div>
+                  <div class="time">
+                    地址：广东省珠海市香洲区唐家湾镇社区120号
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="img_box">
+                <img src="./assets/images/珠海社会安防切图/目标人物.png"
+                     alt="">
+              </div>
+              <div class="info_content">
+                <div class="name">
+                  张玉
+                  <span>涉毒人员库</span>
+                  <span>全国盗抢库</span>
+                </div>
+                <div class="time_box">
+                  <div class="time">
+                    时间：2021-12-18 18:00:00
+                  </div>
+                  <div class="time">
+                    地址：广东省珠海市香洲区唐家湾镇社区120号
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="img_box">
+                <img src="./assets/images/珠海社会安防切图/目标人物.png"
+                     alt="">
+              </div>
+              <div class="info_content">
+                <div class="name">
+                  张玉
+                  <span>涉毒人员库</span>
+                  <span>全国盗抢库</span>
+                </div>
+                <div class="time_box">
+                  <div class="time">
+                    时间：2021-12-18 18:00:00
+                  </div>
+                  <div class="time">
+                    地址：广东省珠海市香洲区唐家湾镇社区120号
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="img_box">
+                <img src="./assets/images/珠海社会安防切图/目标人物.png"
+                     alt="">
+              </div>
+              <div class="info_content">
+                <div class="name">
+                  张玉
+                  <span>涉毒人员库</span>
+                  <span>全国盗抢库</span>
+                </div>
+                <div class="time_box">
+                  <div class="time">
+                    时间：2021-12-18 18:00:00
+                  </div>
+                  <div class="time">
+                    地址：广东省珠海市香洲区唐家湾镇社区120号
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="img_box">
+                <img src="./assets/images/珠海社会安防切图/目标人物.png"
+                     alt="">
+              </div>
+              <div class="info_content">
+                <div class="name">
+                  张玉
+                  <span>涉毒人员库</span>
+                  <span>全国盗抢库</span>
+                </div>
+                <div class="time_box">
+                  <div class="time">
+                    时间：2021-12-18 18:00:00
+                  </div>
+                  <div class="time">
+                    地址：广东省珠海市香洲区唐家湾镇社区120号
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="img_box">
+                <img src="./assets/images/珠海社会安防切图/目标人物.png"
+                     alt="">
+              </div>
+              <div class="info_content">
+                <div class="name">
+                  张玉
+                  <span>涉毒人员库</span>
+                  <span>全国盗抢库</span>
+                </div>
+                <div class="time_box">
+                  <div class="time">
+                    时间：2021-12-18 18:00:00
+                  </div>
+                  <div class="time">
+                    地址：广东省珠海市香洲区唐家湾镇社区120号
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="img_box">
+                <img src="./assets/images/珠海社会安防切图/目标人物.png"
+                     alt="">
+              </div>
+              <div class="info_content">
+                <div class="name">
+                  张玉
+                  <span>涉毒人员库</span>
+                  <span>全国盗抢库</span>
+                </div>
+                <div class="time_box">
+                  <div class="time">
+                    时间：2021-12-18 18:00:00
+                  </div>
+                  <div class="time">
+                    地址：广东省珠海市香洲区唐家湾镇社区120号
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="img_box">
+                <img src="./assets/images/珠海社会安防切图/目标人物.png"
+                     alt="">
+              </div>
+              <div class="info_content">
+                <div class="name">
+                  张玉
+                  <span>涉毒人员库</span>
+                  <span>全国盗抢库</span>
+                </div>
+                <div class="time_box">
+                  <div class="time">
+                    时间：2021-12-18 18:00:00
+                  </div>
+                  <div class="time">
+                    地址：广东省珠海市香洲区唐家湾镇社区120号
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="img_box">
+                <img src="./assets/images/珠海社会安防切图/目标人物.png"
+                     alt="">
+              </div>
+              <div class="info_content">
+                <div class="name">
+                  张玉
+                  <span>涉毒人员库</span>
+                  <span>全国盗抢库</span>
+                </div>
+                <div class="time_box">
+                  <div class="time">
+                    时间：2021-12-18 18:00:00
+                  </div>
+                  <div class="time">
+                    地址：广东省珠海市香洲区唐家湾镇社区120号
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="img_box">
+                <img src="./assets/images/珠海社会安防切图/目标人物.png"
+                     alt="">
+              </div>
+              <div class="info_content">
+                <div class="name">
+                  张玉
+                  <span>涉毒人员库</span>
+                  <span>全国盗抢库</span>
+                </div>
+                <div class="time_box">
+                  <div class="time">
+                    时间：2021-12-18 18:00:00
+                  </div>
+                  <div class="time">
+                    地址：广东省珠海市香洲区唐家湾镇社区120号
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="img_box">
+                <img src="./assets/images/珠海社会安防切图/目标人物.png"
+                     alt="">
+              </div>
+              <div class="info_content">
+                <div class="name">
+                  张玉
+                  <span>涉毒人员库</span>
+                  <span>全国盗抢库</span>
+                </div>
+                <div class="time_box">
+                  <div class="time">
+                    时间：2021-12-18 18:00:00
+                  </div>
+                  <div class="time">
+                    地址：广东省珠海市香洲区唐家湾镇社区120号
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer_img">
+      <img src="./assets/images/珠海社会安防切图/箭头.png"
+           alt="">
+      <img src="./assets/images/珠海社会安防切图/箭头.png"
+           alt="">
+    </div>
+  </div>
+</body>
+
+</html>

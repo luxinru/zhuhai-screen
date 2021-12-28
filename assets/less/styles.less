@@ -1,0 +1,654 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+@font-face {
+  font-family: YouSheBiaoTiHei;
+  src: url('../fonts/YouSheBiaoTiHei-2.ttf'),
+    url('../fonts/YouSheBiaoTiHei-2.ttf');
+  /* IE9+,可以是具体的实际链接 */
+}
+
+.mt16 {
+  margin-top: 1.333rem;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.page_root {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: url('../images/bj.jpg') no-repeat;
+  background-size: 100% 100%;
+  display: flex;
+  font-family: YouSheBiaoTiHei;
+  overflow: hidden;
+
+  .footer_img {
+    position: absolute;
+    width: 100%;
+    height: 34.083rem;
+    left: 0;
+    bottom: 0;
+    background: url('../images/珠海社会安防切图/底部.png') no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    img {
+      position: absolute;
+      width: 111px;
+      height: 54px;
+      bottom: 1rem;
+
+      &:nth-child(1) {
+        left: 1rem;
+        transform: rotateY(180deg);
+      }
+
+      &:nth-child(2) {
+        right: 1rem;
+      }
+    }
+  }
+
+  .part {
+    flex: 1 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3.083rem;
+    box-sizing: border-box;
+    overflow: hidden;
+    z-index: 3;
+  }
+
+  .box {
+    flex: 1 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.333rem;
+    overflow: hidden;
+
+    .title {
+      position: relative;
+      width: 100%;
+      height: 3.583rem;
+      display: flex;
+      background: url('../images/珠海社会安防切图/标题1.png') no-repeat;
+      background-size: 100% 100%;
+      font-size: 1.333rem;
+      font-family: Microsoft YaHei;
+      font-weight: 400;
+      color: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+
+      span {
+        margin: .167rem 0 0 9%;
+        width: 100%;
+        flex: 1 0;
+      }
+
+      img {
+        height: .5rem;
+        margin: 0 3% 0 5%;
+      }
+    }
+  }
+
+  .left {
+    .content {
+      flex: 1 0;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0 3%;
+
+      .item {
+        width: 50%;
+        height: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          width: 6.333rem;
+          height: 6.417rem;
+        }
+
+        .info {
+          flex: 1 0;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          padding: 10% 0 0 .333rem;
+
+          .name {
+            font-size: 1.167rem;
+            font-family: Microsoft YaHei;
+            font-weight: 400;
+            color: #FFFFFF;
+          }
+
+          .value {
+            font-size: 1.75rem;
+            font-weight: 400;
+            color: #90FFAD;
+          }
+        }
+      }
+    }
+
+    .car_content {
+      display: flex;
+      justify-content: center;
+      padding-top: 2rem;
+
+      .img_box {
+        position: relative;
+        width: 9.667rem;
+        height: 6rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        img {
+          position: absolute;
+          top: 0;
+          width: 100%;
+          height: 100%;
+
+          &:first-child {
+            left: 0;
+          }
+
+          &:last-child {
+            width: 6.833rem;
+            height: 4.333rem;
+          }
+        }
+      }
+
+      .info_box {
+        width: 14.75rem;
+        display: flex;
+        flex-direction: column;
+        margin-left: 4.167rem;
+
+        .info_box_item {
+          width: 100%;
+          height: 2.5rem;
+          background: url('../images/珠海社会安防切图/车辆bj.png') no-repeat;
+          background-size: 100% 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .name {
+            font-size: 1rem;
+            font-family: Microsoft YaHei;
+            font-weight: 400;
+            color: #FFFFFF;
+
+            background: linear-gradient(0deg, #43D8FF 0%, #FDFFFF 64.5263671875%, #FEFFFF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+
+          .value {
+            font-size: 1.417rem;
+            font-weight: 400;
+            color: #479FFE;
+            margin-left: 1.083rem;
+          }
+
+          &:last-child {
+            margin-top: 1.333rem;
+          }
+        }
+
+      }
+    }
+  }
+
+  .center {
+    position: relative;
+    width: 90.833rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 3;
+
+    .container {
+      position: relative;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .top {
+        position: absolute;
+        top: 0;
+        width: 75.917rem;
+        height: 37.417rem;
+      }
+
+
+      .title {
+        font-size: 4rem;
+        font-weight: 400;
+        font-style: italic;
+        color: #FFFFFF;
+        margin-top: 15.417rem;
+        z-index: 1;
+      }
+    }
+
+    .figure {
+      position: absolute;
+      height: 37rem;
+      bottom: 25rem;
+    }
+
+    .bottom {
+      position: absolute;
+      bottom: 3rem;
+      width: 150.458rem;
+      height: 33.125rem;
+      // transform: scale(0.000001)
+    }
+
+    .imgs_box {
+      position: relative;
+      width: 90rem;
+      height: 30rem;
+      margin: 20rem 0 0 5rem;
+
+      .imgs_box_item {
+        position: absolute;
+        width: 4.167rem;
+        height: 4.167rem;
+        border-radius: 50%;
+        overflow: hidden;
+        transition-property: top, left, opacity;
+        transition-duration: 15s;
+        transition-timing-function: linear;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+
+          &:nth-child(1) {
+            top: 0;
+            left: 0;
+          }
+
+          &:nth-child(2) {
+            width: 2.5rem;
+            height: 2.5rem;
+          }
+        }
+      }
+
+      .img1 {
+        top: calc(50% - 50px);
+        left: 0;
+      }
+
+      .img2 {
+        top: 0;
+        left: calc(25% - 50px);
+        opacity: 0;
+      }
+
+      .img3 {
+        top: 0;
+        left: calc(75% - 50px);
+        opacity: 0;
+      }
+
+      .img4 {
+        top: calc(50% - 50px);
+        left: calc(100% - 100px);
+      }
+
+      .img5 {
+        top: calc(100% - 100px);
+        left: calc(75% - 50px);
+      }
+
+      .img6 {
+        top: calc(100% - 100px);
+        left: calc(25% - 50px);
+      }
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 12.75rem;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding: 0 12%;
+
+      .item {
+        flex: 1 0;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        cursor: pointer;
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        span {
+          font-size: 1.25rem;
+          font-weight: 400;
+          color: #FFFFFF;
+          line-height: 1.5rem;
+          margin-top: -1.333rem;
+        }
+
+        .bac {
+          content: url('../images/12.24补充切图/按钮1.png');
+          height: 12.75rem;
+          margin: -2rem 0 0 0;
+        }
+
+        .tip_img {
+          position: absolute;
+          margin-top: 3.4rem;
+          width: 2.417rem;
+          height: 1.917rem;
+        }
+      }
+
+      .active {
+        .bac {
+          content: url('../images/12.24补充切图/按钮2.png');
+        }
+
+        .tip_img {
+          position: absolute;
+          margin-top: 2.8rem;
+          width: 2.417rem;
+          height: 1.917rem;
+        }
+      }
+    }
+  }
+
+  .right {
+    overflow: hidden;
+
+    .content {
+      flex: 1 0;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow: hidden;
+
+      .info {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 2rem 0;
+
+        .item {
+          flex: 1 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .img_box {
+            position: relative;
+            width: 7.167rem;
+            height: 6.333rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            img {
+              position: absolute;
+              width: 100%;
+              height: 100%;
+            }
+
+            .img_gun {
+              width: 3.167rem;
+              height: 3rem;
+            }
+
+            .img_danger {
+              width: 2.417rem;
+              height: 3.333rem;
+            }
+          }
+
+          .info_box {
+            display: flex;
+            flex-direction: column;
+            margin-left: 1.083rem;
+
+            .name {
+              font-size: .833rem;
+              font-weight: 400;
+              color: #FFFFFF;
+            }
+
+            .value {
+              font-size: 1.5rem;
+              font-weight: 400;
+              color: #479FFE;
+            }
+          }
+        }
+      }
+
+      .list {
+        flex: 1 0;
+        width: 100%;
+        overflow: scroll;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .item {
+          width: 29.167rem;
+          height: 1.833rem;
+          background: linear-gradient(to right, rgba(32, 124, 203, 0.2), rgba(32, 124, 203, 0));
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0 1%;
+          margin-top: .583rem;
+
+          .name {
+            font-size: .833rem;
+            font-family: Microsoft YaHei;
+            font-weight: 400;
+            color: #B6BFDF;
+          }
+
+          .value {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: #479FFE;
+          }
+        }
+      }
+
+      .info_title {
+        width: 100%;
+        height: 4rem;
+        margin-top: .833rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.75rem;
+        font-weight: 400;
+        color: #FFFFFF;
+        background: url('../images/珠海社会安防切图/光.png') no-repeat;
+        background-size: 90% 100%;
+      }
+
+      .info_bar {
+        flex: 1 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        margin-top: 2rem;
+
+        .item {
+          flex: 1 0;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          font-size: 1.25rem;
+          font-weight: 400;
+          color: rgba(71, 159, 254, 1);
+
+          .img_box {
+            width: 2.5rem;
+            height: 2.5rem;
+            margin-bottom: .917rem;
+            font-size: 1.333rem;
+            font-weight: 400;
+            color: rgba(0, 198, 255, 1);
+            background: url('../images/珠海社会安防切图/重点人员-2.png') no-repeat;
+            background-size: 100% 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+
+          .img_box1 {
+            background: url('../images/珠海社会安防切图/重点人员-1.png') no-repeat;
+            background-size: 100% 100%;
+            color: rgba(250, 44, 83, 1);
+          }
+
+          .img_box3 {
+            background: url('../images/珠海社会安防切图/重点人员-3.png') no-repeat;
+            background-size: 100% 100%;
+            color: rgba(249, 199, 104, 1);
+          }
+
+          .img_box4 {
+            background: url('../images/珠海社会安防切图/重点人员-4.png') no-repeat;
+            background-size: 100% 100%;
+            color: rgba(144, 255, 173, 1);
+          }
+        }
+      }
+
+      .list_box {
+        flex: 1 0;
+        width: 100%;
+        padding: 0 3% 0 3%;
+        display: flex;
+        flex-wrap: wrap;
+        overflow: scroll;
+
+        .item {
+          width: 100%;
+          height: 8.333rem;
+          display: flex;
+          align-items: center;
+          padding: 1.25rem .333rem;
+          border-bottom: 1px solid rgba(0, 108, 255, 0.4);
+
+          .img_box {
+            width: 5.083rem;
+            height: 6rem;
+            background: url('../images/珠海社会安防切图/目标人物选择框.png') no-repeat;
+            background-size: 100% 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            img {
+              width: 4.667rem;
+              height: 5.583rem;
+            }
+          }
+
+          .info_content {
+            flex: 1 0;
+            height: 100%;
+            margin-left: .667rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .name {
+              font-size: 1.167rem;
+              font-weight: 400;
+              color: #AAB4D4;
+              width: 100%;
+              display: flex;
+              align-items: center;
+              display: flex;
+              align-items: center;
+              font-family: Microsoft YaHei;
+
+              span {
+                font-size: 1rem;
+                font-family: Source Han Sans CN;
+                font-weight: 400;
+                color: #FFFFFF;
+                padding: 0 .5rem;
+                height: 1.333rem;
+                display: flex;
+                align-items: center;
+                background: rgba(55, 127, 205, 1);
+                border-radius: .417rem;
+                margin-left: .5rem;
+
+                &:last-child {
+                  background: rgba(144, 255, 173, 1);
+                  color: rgba(3, 11, 33, 1);
+                }
+              }
+            }
+
+            .time_box {
+              display: flex;
+              flex-direction: column;
+
+              .time {
+                font-size: 1rem;
+                font-weight: 400;
+                color: #377FCD;
+                line-height: 18px;
+                font-family: Microsoft YaHei;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
