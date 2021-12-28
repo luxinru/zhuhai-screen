@@ -50,7 +50,9 @@
               color: 'rgba(183, 200, 235, 0.29)',
               type: 'dashed'
             }
-
+          },
+          axisLabel: {
+            color: '#899DBF'
           }
         },
         yAxis: {
@@ -237,7 +239,9 @@
                 color: 'rgba(183, 200, 235, 0.29)',
                 type: 'dashed'
               }
-
+            },
+            axisLabel: {
+              color: '#899DBF'
             }
           }
         ],
@@ -338,6 +342,22 @@
       }, 15000)
     }
 
+    function transitionImg () {
+      const elements = $('.figure')
+      let key = 1
+      setInterval(() => {
+        for (let index = 0; index < elements.length; index++) {
+          const element = elements[index];
+          element.style.opacity = 0
+        }
+        elements[key].style.opacity = 1
+        key = key + 1
+        if (key > 2) {
+          key = 0
+        }
+      }, 5 * 1000)
+    }
+
     window.onload = () => {
       const elements = $('.imgs_box').children('div')
       for (let index = 0; index < elements.length; index++) {
@@ -351,6 +371,7 @@
       }
 
       scrollFun()
+      transitionImg()
 
       setFontSize()
       initLeft2Chart()
@@ -467,35 +488,59 @@
     </section>
     <section class="center">
       <div class="container">
-        <img class="top" src="./assets/images/顶部.png" alt="">
+        <img class="top"
+             src="./assets/images/顶部.png"
+             alt="">
         <div class="title">珠海社会治安防控应用平台</div>
       </div>
-      <img class="bottom" src="./assets/images/底座.png" alt="">
-      <img class="figure" src="./assets/images/剪影.png" alt="">
+      <img class="bottom"
+           src="./assets/images/底座.png"
+           alt="">
+      <img class="figure figure1"
+           src="./assets/images/剪影.png"
+           alt="">
+      <img class="figure figure2"
+           src="./assets/images/剪影2.png"
+           alt="">
+      <img class="figure figure3"
+           src="./assets/images/剪影3.png"
+           alt="">
       <div class="imgs_box">
         <div class="imgs_box_item img1">
-          <img src="./assets/images/枪支bj.png" alt="">
-          <img src="./assets/images/枪支.png" alt="">
+          <img src="./assets/images/枪支bj.png"
+               alt="">
+          <img src="./assets/images/枪支.png"
+               alt="">
         </div>
         <div class="imgs_box_item img2">
-          <img src="./assets/images/监控bj.png" alt="">
-          <img src="./assets/images/监控.png" alt="">
+          <img src="./assets/images/监控bj.png"
+               alt="">
+          <img src="./assets/images/监控.png"
+               alt="">
         </div>
         <div class="imgs_box_item img3">
-          <img src="./assets/images/剧毒物bj.png" alt="">
-          <img src="./assets/images/剧毒物.png" alt="">
+          <img src="./assets/images/剧毒物bj.png"
+               alt="">
+          <img src="./assets/images/剧毒物.png"
+               alt="">
         </div>
         <div class="imgs_box_item img4">
-          <img src="./assets/images/枪支bj.png" alt="">
-          <img src="./assets/images/刀具.png" alt="">
+          <img src="./assets/images/枪支bj.png"
+               alt="">
+          <img src="./assets/images/刀具.png"
+               alt="">
         </div>
         <div class="imgs_box_item img5">
-          <img src="./assets/images/监控bj.png" alt="">
-          <img src="./assets/images/爆炸物.png" alt="">
+          <img src="./assets/images/监控bj.png"
+               alt="">
+          <img src="./assets/images/爆炸物.png"
+               alt="">
         </div>
         <div class="imgs_box_item img6">
-          <img src="./assets/images/监控bj.png" alt="">
-          <img src="./assets/images/车辆.png" alt="">
+          <img src="./assets/images/监控bj.png"
+               alt="">
+          <img src="./assets/images/车辆.png"
+               alt="">
         </div>
       </div>
       <div class="footer">
