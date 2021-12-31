@@ -17,6 +17,7 @@
   <script src="assets/js/jquery-3.6.0.min.js"></script>
   <script src="assets/js/prefixfree.min.js"></script>
   <script src="assets/js/stopExecutionOnTimeout.js"></script>
+  <script src="assets/js/jquery.clickOutside.js"></script>
 
   <script>
     function initLeft2Chart() {
@@ -311,12 +312,12 @@
     }
 
     function onFooterChange(index) {
-      const items = $(".footer").children(".item")
+      const items = $(".footer").children(".footer_item")
       for (let index = 0; index < items.length; index++) {
         const element = items[index];
-        element.className = 'item'
+        element.className = 'footer_item'
       }
-      items[index - 1].className = 'item active'
+      items[index - 1].className = 'footer_item active'
     }
 
     function setFontSize() {
@@ -395,6 +396,30 @@
           topKey = 0
         }
       }, 1 * 1000)
+
+      $('#footer_item1').clickOutside((event) => {
+        if (event[0].target.className.indexOf('footer_item') === -1 && $('#footer_item1')[0].className.indexOf('active') > -1) {
+          $('#footer_item1')[0].className = 'footer_item'
+        }
+      })
+
+      $('#footer_item2').clickOutside((event) => {
+        if (event[0].target.className.indexOf('footer_item') === -1 && $('#footer_item2')[0].className.indexOf('active') > -1) {
+          $('#footer_item2')[0].className = 'footer_item'
+        }
+      })
+
+      $('#footer_item3').clickOutside((event) => {
+        if (event[0].target.className.indexOf('footer_item') === -1 && $('#footer_item3')[0].className.indexOf('active') > -1) {
+          $('#footer_item3')[0].className = 'footer_item'
+        }
+      })
+
+      $('#footer_item4').clickOutside((event) => {
+        if (event[0].target.className.indexOf('footer_item') === -1 && $('#footer_item4')[0].className.indexOf('active') > -1) {
+          $('#footer_item4')[0].className = 'footer_item'
+        }
+      })
 
       $('#new_time').html(moment(new Date()).format('YYYY/MM/DD HH:mm:ss'))
       setInterval(() => {
@@ -613,7 +638,7 @@
         </div>
       </div>
       <div class="footer">
-        <div class="item"
+        <div id="footer_item1" class="footer_item"
              onclick="onFooterChange(1)">
           <img class="bac"
                src=""
@@ -637,7 +662,7 @@
             </div>
           </div>
         </div>
-        <div class="item"
+        <div id="footer_item2" class="footer_item"
              onclick="onFooterChange(2)">
           <img class="bac"
                src=""
@@ -661,7 +686,7 @@
             </div>
           </div>
         </div>
-        <div class="item"
+        <div id="footer_item3" class="footer_item"
              onclick="onFooterChange(3)">
           <img class="bac"
                src=""
@@ -685,7 +710,7 @@
             </div>
           </div>
         </div>
-        <div class="item"
+        <div id="footer_item4" class="footer_item"
              onclick="onFooterChange(4)">
           <img class="bac"
                src=""
