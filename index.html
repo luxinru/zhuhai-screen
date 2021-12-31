@@ -13,7 +13,10 @@
         href="assets/less/styles.less" />
   <script src="assets/js/less.min.js"></script>
   <script src="assets/js/echarts.js"></script>
+  <script src="assets/js/moment.js"></script>
   <script src="assets/js/jquery-3.6.0.min.js"></script>
+  <script src="assets/js/prefixfree.min.js"></script>
+  <script src="assets/js/stopExecutionOnTimeout.js"></script>
 
   <script>
     function initLeft2Chart() {
@@ -342,7 +345,7 @@
       }, 15000)
     }
 
-    function transitionImg () {
+    function transitionImg() {
       const elements = $('.figure')
       let key = 1
       setInterval(() => {
@@ -358,6 +361,15 @@
       }, 15 * 1000)
     }
 
+    function changeBtnItem(e) {
+      const elements = document.getElementsByClassName('btn_list_item')
+      for (let index = 0; index < elements.length; index++) {
+        const element = elements[index];
+        element.style.background = 'rgba(3, 157, 255, 0.2)'
+      }
+      e.target.style.background = 'rgba(3, 157, 255, 1)'
+    }
+
     window.onload = () => {
       const elements = $('.imgs_box').children('div')
       for (let index = 0; index < elements.length; index++) {
@@ -370,12 +382,56 @@
         }
       }
 
+      const topElements = $('.top')
+      let topKey = 1
+      setInterval(() => {
+        for (let index = 0; index < topElements.length; index++) {
+          const element = topElements[index];
+          element.style.opacity = 0
+        }
+        topElements[topKey].style.opacity = 1
+        topKey = topKey + 1
+        if (topKey > 1) {
+          topKey = 0
+        }
+      }, 1 * 1000)
+
+      $('#new_time').html(moment(new Date()).format('YYYY/MM/DD HH:mm:ss'))
+      setInterval(() => {
+        $('#new_time').html(moment(new Date()).format('YYYY/MM/DD HH:mm:ss'))
+      }, 1 * 1000)
+
       scrollFun()
       transitionImg()
 
       setFontSize()
       initLeft2Chart()
       initLeft3Chart()
+
+      // 星星效果
+
+      var stars = 800;
+      var $stars = $('.stars');
+      var r = 800;
+      for (var i = 0; i < stars; i++) {
+        if (window.CP.shouldStopExecution(1)) {
+          break;
+        }
+        var $star = $('<div/>').addClass('star');
+        $stars.append($star);
+      }
+      window.CP.exitedLoop(1);
+      $('.star').each(function () {
+        var cur = $(this);
+        var s = 0.2 + Math.random() * 1;
+        var curR = r + Math.random() * 300;
+        cur.css({
+          transformOrigin: '0 0 ' + curR + 'px',
+          transform: ' translate3d(0,0,-' + curR + 'px) rotateY(' + Math.random() * 360 + 'deg) rotateX(' + Math.random() * -50 + 'deg) scale(' + s + ',' + s + ')'
+        });
+      });
+
+      // 星星效果end
     }
 
     window.onresize = () => {
@@ -386,6 +442,16 @@
 
 <body>
   <div class="page_root">
+    <!-- 星星效果 -->
+    <div class="stars">
+    </div>
+    <!-- 星星效果end -->
+
+    <div class="now_time">
+      <span id="new_time"></span>
+      <img src="./assets/images/set up.png"
+           alt="">
+    </div>
     <section class="part left">
       <div class="box">
         <div class="title">
@@ -489,7 +555,10 @@
     <section class="center">
       <div class="container">
         <img class="top"
-             src="./assets/images/顶部.png"
+             src="./assets/images/top.png"
+             alt="">
+        <img class="top"
+             src="./assets/images/top-1.png"
              alt="">
         <div class="title">珠海社会治安防控应用平台</div>
       </div>
@@ -544,7 +613,7 @@
         </div>
       </div>
       <div class="footer">
-        <div class="item active"
+        <div class="item"
              onclick="onFooterChange(1)">
           <img class="bac"
                src=""
@@ -553,6 +622,20 @@
                src="./assets/images/珠海社会安防切图/psjk.png"
                alt="">
           <span>平时监控</span>
+
+          <div class="btn_list">
+            <div class="btn_list_content">
+              <div class="btn_list_item" onclick="changeBtnItem(event)">按钮1</div>
+              <div class="btn_list_item" onclick="changeBtnItem(event)">按钮1</div>
+              <div class="btn_list_item" onclick="changeBtnItem(event)">按钮1</div>
+              <div class="btn_list_item" onclick="changeBtnItem(event)">按钮1</div>
+              <div class="btn_list_item" onclick="changeBtnItem(event)">按钮1</div>
+              <div class="btn_list_item" onclick="changeBtnItem(event)">按钮1</div>
+              <div class="btn_list_item" onclick="changeBtnItem(event)">按钮1</div>
+              <div class="btn_list_item" onclick="changeBtnItem(event)">按钮1</div>
+              <div class="btn_list_item" onclick="changeBtnItem(event)">按钮1</div>
+            </div>
+          </div>
         </div>
         <div class="item"
              onclick="onFooterChange(2)">
@@ -563,6 +646,20 @@
                src="./assets/images/珠海社会安防切图/zasj.png"
                alt="">
           <span>治安事件</span>
+
+          <div class="btn_list">
+            <div class="btn_list_content">
+              <div class="btn_list_item" onclick="changeBtnItem(event)">按钮2</div>
+              <div class="btn_list_item" onclick="changeBtnItem(event)">按钮2</div>
+              <div class="btn_list_item" onclick="changeBtnItem(event)">按钮2</div>
+              <div class="btn_list_item" onclick="changeBtnItem(event)">按钮2</div>
+              <div class="btn_list_item" onclick="changeBtnItem(event)">按钮2</div>
+              <div class="btn_list_item" onclick="changeBtnItem(event)">按钮2</div>
+              <div class="btn_list_item" onclick="changeBtnItem(event)">按钮2</div>
+              <div class="btn_list_item" onclick="changeBtnItem(event)">按钮2</div>
+              <div class="btn_list_item" onclick="changeBtnItem(event)">按钮2</div>
+            </div>
+          </div>
         </div>
         <div class="item"
              onclick="onFooterChange(3)">
@@ -573,6 +670,20 @@
                src="./assets/images/珠海社会安防切图/zszh.png"
                alt="">
           <span>战时智慧</span>
+
+          <div class="btn_list">
+            <div class="btn_list_content">
+              <div class="btn_list_item" onclick="changeBtnItem(event)">按钮3</div>
+              <div class="btn_list_item" onclick="changeBtnItem(event)">按钮3</div>
+              <div class="btn_list_item" onclick="changeBtnItem(event)">按钮3</div>
+              <div class="btn_list_item" onclick="changeBtnItem(event)">按钮3</div>
+              <div class="btn_list_item" onclick="changeBtnItem(event)">按钮3</div>
+              <div class="btn_list_item" onclick="changeBtnItem(event)">按钮3</div>
+              <div class="btn_list_item" onclick="changeBtnItem(event)">按钮3</div>
+              <div class="btn_list_item" onclick="changeBtnItem(event)">按钮3</div>
+              <div class="btn_list_item" onclick="changeBtnItem(event)">按钮3</div>
+            </div>
+          </div>
         </div>
         <div class="item"
              onclick="onFooterChange(4)">
@@ -583,6 +694,20 @@
                src="./assets/images/珠海社会安防切图/afyj.png"
                alt="">
           <span>安防预警</span>
+
+          <div class="btn_list">
+            <div class="btn_list_content">
+              <div class="btn_list_item" onclick="changeBtnItem(event)">按钮4</div>
+              <div class="btn_list_item" onclick="changeBtnItem(event)">按钮4</div>
+              <div class="btn_list_item" onclick="changeBtnItem(event)">按钮4</div>
+              <div class="btn_list_item" onclick="changeBtnItem(event)">按钮4</div>
+              <div class="btn_list_item" onclick="changeBtnItem(event)">按钮4</div>
+              <div class="btn_list_item" onclick="changeBtnItem(event)">按钮4</div>
+              <div class="btn_list_item" onclick="changeBtnItem(event)">按钮4</div>
+              <div class="btn_list_item" onclick="changeBtnItem(event)">按钮4</div>
+              <div class="btn_list_item" onclick="changeBtnItem(event)">按钮4</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

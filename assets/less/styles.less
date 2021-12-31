@@ -30,6 +30,58 @@
   font-family: YouSheBiaoTiHei;
   overflow: hidden;
 
+  /* 星星效果 */
+
+  @keyframes rotate {
+    0% {
+      transform: perspective(33.333rem) rotateZ(20deg) rotateX(-40deg) rotateY(0);
+    }
+
+    100% {
+      transform: perspective(33.333rem) rotateZ(20deg) rotateX(-40deg) rotateY(-360deg);
+    }
+  }
+
+  .stars {
+    transform: perspective(41.667rem);
+    transform-style: preserve-3d;
+    position: absolute;
+    bottom: 0;
+    perspective-origin: 50% 100%;
+    left: 50%;
+    animation: rotate 90s infinite linear;
+  }
+
+  .star {
+    width: .1rem;
+    height: .1rem;
+    background: #F7F7B6;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: 0 0 -25rem;
+    transform: translate3d(0, 0, -25rem);
+    backface-visibility: hidden;
+  }
+
+  /* 星星效果 end */
+
+  .now_time {
+    position: absolute;
+    top: 1.333rem;
+    right: 1.333rem;
+    display: flex;
+    align-items: center;
+    color: #4499f6;
+    font-size: 1.333rem;
+
+    img {
+      width: 1.792rem;
+      height: 1.792rem;
+      margin-left: 1.333rem;
+    }
+  }
+
   .footer_img {
     position: absolute;
     width: 100%;
@@ -243,6 +295,7 @@
         top: 0;
         width: 75.917rem;
         height: 37.417rem;
+        transition: all 1s;
       }
 
 
@@ -274,6 +327,7 @@
       bottom: 25rem;
       opacity: 0;
     }
+
     .figure3 {
       height: 36.875rem;
       bottom: 25rem;
@@ -366,10 +420,10 @@
       height: 12.75rem;
       display: flex;
       align-items: center;
-      overflow: hidden;
       padding: 0 12%;
 
       .item {
+        position: relative;
         flex: 1 0;
         height: 100%;
         display: flex;
@@ -401,6 +455,44 @@
           width: 2.417rem;
           height: 1.917rem;
         }
+
+        .btn_list {
+          position: absolute;
+          top: -10.875rem;
+          width: 8.208rem;
+          height: 13rem;
+          background: url('../images/menu.png') no-repeat;
+          background-size: 100% 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          display: none;
+          padding: .5rem;
+
+          &_content {
+            width: 100%;
+            height: 95%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-y: scroll;
+          }
+
+          &_item {
+            width: 100%;
+            height: 2.167rem;
+            background: rgba(3, 157, 255, 0.2);
+            color: rgba(249, 242, 230, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: .333rem;
+
+            &:flex-child {
+              margin-top: 0;
+            }
+          }
+        }
       }
 
       .active {
@@ -413,6 +505,10 @@
           margin-top: 2.8rem;
           width: 2.417rem;
           height: 1.917rem;
+        }
+
+        .btn_list {
+          display: flex;
         }
       }
     }
