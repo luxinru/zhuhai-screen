@@ -450,6 +450,11 @@
           margin: -2rem 0 0 0;
         }
 
+        .bac2 {
+          position: absolute;
+          display: none;
+        }
+
         .tip_img {
           position: absolute;
           margin-top: 3.4rem;
@@ -459,39 +464,31 @@
 
         .btn_list {
           position: absolute;
-          top: -10.875rem;
-          width: 8.208rem;
-          height: 13rem;
-          background: url('../images/menu.png') no-repeat;
-          background-size: 100% 100%;
+          top: -12rem;
           display: flex;
           flex-direction: column;
           align-items: center;
           display: none;
-          padding: .5rem;
+          padding: .5rem .5rem 1.5rem .5rem;
 
           &_content {
             width: 100%;
-            height: 95%;
+            height: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
-            overflow-y: scroll;
           }
 
           &_item {
-            width: 100%;
-            height: 2.167rem;
-            background: rgba(3, 157, 255, 0.2);
+            width: 10.917rem;
+            height: 4rem;
+            background: url('../images/二级菜单.png') no-repeat;
+            background-size: 100% 100%;
             color: rgba(249, 242, 230, 1);
+            font-size: 1.333rem;
             display: flex;
-            align-items: center;
             justify-content: center;
-            margin-top: .333rem;
-
-            &:flex-child {
-              margin-top: 0;
-            }
+            padding-top: 9%;
           }
         }
 
@@ -501,12 +498,41 @@
             height: 12.75rem;
             margin: -2rem 0 0 0;
           }
+
+          .bac2 {
+            content: url('../images/12.24补充切图/按钮2-1.png');
+            position: absolute;
+            display: block;
+            height: 12.75rem;
+            margin: -2rem 0 0 0;
+            animation: lightning 3s linear infinite;
+          }
+
+          .tip_img {
+            position: absolute;
+            margin-top: 2.8rem;
+            width: 2.417rem;
+            height: 1.917rem;
+          }
+
+          .btn_list {
+            display: flex;
+          }
         }
       }
 
       .active {
         .bac {
           content: url('../images/12.24补充切图/按钮2.png');
+        }
+
+        .bac2 {
+          content: url('../images/12.24补充切图/按钮2-1.png');
+          position: absolute;
+          display: block;
+          height: 12.75rem;
+          margin: -2rem 0 0 0;
+          animation: lightning 3s linear infinite;
         }
 
         .tip_img {
@@ -518,6 +544,20 @@
 
         .btn_list {
           display: flex;
+        }
+      }
+
+      @keyframes lightning {
+        0% {
+          opacity: 1;
+        }
+
+        50% {
+          opacity: 0;
+        }
+
+        100% {
+          opacity: 1;
         }
       }
     }
